@@ -20,7 +20,8 @@ import sys
 def rewriteAccountFile(aFile,accountList):
     """
      update the error times of account
-    :param aFile,accountList:
+    :param aFile:
+    :param accountList:
     :return:
     """
     writeAccountFile = open(aFile,'w')
@@ -29,8 +30,13 @@ def rewriteAccountFile(aFile,accountList):
         l = a + "\t" + b + "\t" + str(c) + "\n"
         writeAccountFile.write(l)
     writeAccountFile.close()
-#If the account's password has been wrong for three time,the account is locking
 def loginAuthentication(aFile,accountList):
+    """
+    loginAuthentication,If the account's password has been wrong for three time,the account is locking
+    :param aFile:
+    :param accountList:
+    :return:
+    """
     while True:
         inputName = input("Please input your username:").strip()
         if len(inputName) == 0 :
